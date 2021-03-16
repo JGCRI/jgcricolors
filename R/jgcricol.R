@@ -91,7 +91,7 @@ jgcricol <- function(palx=NULL, alpha=NULL) {
     # Energy
     #--------------
     `a Coal` = "gray40",  `c coal` = "gray40", `3 coal` = "gray40", coal = "gray40", `coal (conv pul)` = "gray40",
-    Coal = "gray40",
+     Coal = "gray40",
     `b Coal w/CCS` = "gray20", `c coal CCS` = "gray20", `Coal CCS` = "gray20",
     `coal (IGCC CCS)` = "#c0237c",
     `coal (IGCC)` = "gray60",

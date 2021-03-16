@@ -13,8 +13,13 @@ LazyData: true
 RoxygenNote: 7.1.1
 Imports: 
 	knitr,
-	graphics
+	graphics,
+	ggplot2,
+	RColorBrewer
 Suggests: 
     rmarkdown
 VignetteBuilder: 
-    knitr
+    knitr,
+	ggplot2,
+	RColorBrewer
+	
