@@ -1,5 +1,5 @@
 ---
-title: "vignette_examples"
+title: "JGCRI Colors User Guide"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{vignette_examples}
@@ -12,6 +12,7 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
+options(rmarkdown.html_vignette.check_title = FALSE)
 ```
 
 
@@ -59,48 +60,39 @@ mypal2 <- jgcricol("pal_basic") # To see an example piechart and values
 
 
 <!-------------------------->
-# Visualize Palettes
+<!-------------------------->
+# JGCRI Colors (pal_all)
+<!-------------------------->
 <!-------------------------->
 
-```{r, echo=FALSE, eval=TRUE, warning=FALSE, message=FALSE,results = 'asis'}
+`jgcricol("pal_all")` is a comprehensive color palette which applies to most JGCRI and GCAM outputs. These can be used for line and bar charts. The following code shows how you can use the same `pal_all` for various bar charts in ggplot. 
+
+```{r, eval=F, echo=T, warning=FALSE, message=FALSE}
 library(jgcricolors)
 library(ggplot2)
 
-# See all available color palettes
-my_pals <- names(jgcricol())[!names(jgcricol()) %in% c("pal_all","pal_sankey")]
- 
-for(i in my_pals){
-  mypal <- jgcricol()[[i]]
-  cat("  \n##",  i, "  \n")
-  cat('<div class="column-left">')
-  par(mai = c(0, 0, 0, 0))
-  pie(rep(1,length(mypal)),label=names(mypal),col=mypal)
-  cat('</div>')
-  cat('<div class="column-right">')
-  cat('<p></p>')
-  cat('<p></p>')
+# Set your palette
+mypal = jgcricol()$pal_all
 
-  print(ggplot() +
-  geom_polygon(data =  jgcricolors::mapUS49df,
-               aes(x = long, y = lat, group = group, fill = subRegion),
-               colour = "gray10", lwd=0.5) +
-  scale_fill_manual(values=rep(mypal,50)[1:length(unique(jgcricolors::mapUS49df$subRegion))]) +
-  theme_void() +
-  coord_fixed(ratio = 1.25) +
-  theme(legend.position = "none"))
+# Example categories for data to plot 
+# Can replace these with any other GCAM technologies or classes as done in the subsequent figures.
+techs = c("a oil","a oil CCS","b natural gas","b natural gas CCS","c coal","c coal CCS",
+    "d biomass","d biomass CCS","e nuclear","f hydro","g wind","h solar","i geothermal",
+    "j traditional biomass","energy reduction")
 
-  cat('</div>')
-  cat('<div class="clearer"></div>')
-  }
+# Create data
+data <- data.frame(label=rep(techs,each=4), x=rep(c(1:4),length(techs)), value=runif(4*length(techs)))
+
+# Plot
+  print(ggplot(data, aes(x=x,y=value, fill=label)) +
+      geom_bar(position="stack", stat="identity",col="black") +
+      scale_fill_manual(values=mypal) +
+      theme_bw() +
+      xlab(NULL) + 
+      ylab(NULL) + 
+      ggtitle("Primary Energy"))
+
 ```
-
-<!-------------------------->
-<!-------------------------->
-# JGCRI Themes (pal_all)
-<!-------------------------->
-<!-------------------------->
-
-`jgcricol("pal_all")` is a comprehensive color palette which applies to most JGCRI and GCAM outputs. These can be used for line and bar charts.
 
 ```{r, eval=TRUE, echo=FALSE, warning=FALSE, message=FALSE, results = 'asis'}
 library(jgcricolors)
@@ -116,7 +108,7 @@ listx <- list(
     "a oil","a oil CCS","b natural gas","b natural gas CCS","c coal","c coal CCS",
     "d biomass","d biomass CCS","e nuclear","f hydro","g wind","h solar","i geothermal",
     "j traditional biomass","energy reduction"),
-  # Color scheme for electricity generation by aggregate fuel
+  
   `Elec gen by fuel` = c( "a Coal",
       "b Coal w/CCS",
       "c Gas",
@@ -134,33 +126,19 @@ listx <- list(
       "o Battery",
       "energy reduction"),
   
-  `Renewable Technologies` = c( "liquids",
-  "gas",
-  "coal",
-  "biomass",
-  "nuclear",
-  "hydro",
-  "wind w/ backup",
-  "wind w/ storage",
-  "csp w/ backup",
-  "csp w/ storage",
-  "pv w/ backup",
-  "pv w/ storage",
-  "rooftop solar",
-  "geothermal",
-  "cogen",
-  "battery",
-  "energy reduction"),
+  `Elec by Tech` = c('biomass',
+      'coal',
+      'gas',
+      'geothermal',
+      'grid_storage',
+      'hydro',
+      'hydrogen',
+      'nuclear',
+      'refined liquids',
+      'rooftop_pv',
+      'solar',
+      'wind'),
   
-  # Buildings colors by fuel
-  `Buildings by fuel` = c( "liquids",
-      "gas",
-      "coal",
-      "biomass",
-      "electricity",
-      "trad biomass"),
-  
-  # Transportation colors by fuel
   `Transport by fuel` = c( "liquids",
       "gas",
       "coal",
@@ -168,68 +146,47 @@ listx <- list(
       "electricity",
       "hydrogen"),
   
-  # Generic end-use color scheme by numbered fuel
-  `End-use numbered` = c( "1 liquids",
-      "2 gas",
-      "3 coal",
-      "4 biomass",
-      "5 electricity",
-      "6 hydrogen",
-      "7 trad biomass",
-      "8 district heat",
-      "feedstocks",
-      "energy reduction"),
+  `Transport by tech` = c( 
+    "LDV",
+    "Bus",
+    "Rail",
+    "Plane",
+    "MotorBike",
+    "Truck",
+    "Ship",
+    "2W", 
+    "3W", 
+    "LHDT", 
+    "MHDT", 
+    "HHDT"),
   
-  # Color scheme for primary fuel costs
-  `Primary fuel costs` = c( "regional oil",
-      "regional natural gas",
-      "regional coal",
-      "regional biomass",
-      "nuclearFuelGenIII"),
+    `AgLu by crop` = c( 'Biomass',
+      'Corn',
+      'FiberCrop',
+      'Fodder',
+      'Forest',
+      'Grass',
+      'MiscCrop',
+      'OilCrop',
+      'Other',
+      'PalmFruit',
+      'Pasture',
+      'Rice',
+      'RootTuber',
+      'Shrub',
+      'SugarCrop',
+      'Urban',
+      'Wheat'),
   
-  # Colors for emissions by aggregate sector
-  `Emiss by sec` = c( "liquid systems",
-      "gas systems",
-      "coal",
-      "biomass systems",
-      "electricity",
-      "hydrogen",
-      "N fertilizer",
-      "district heat",
-      "building",
-      "industry",
-      "transportation"),
+    `Water by sec` = c( 'agriculture',
+      'electricity',
+      'industry',
+      'livestock',
+      'mining',
+      'municipal'
+      )
   
-  # Aggregated (more that usual) land use
-  `Land use`<- c( "urban",
-      "crops",
-      "pasture (grazed)",
-      "forest (managed)",
-      "biomass",
-      "forest (unmanaged)",
-      "shrubs",
-      "grass",
-      "desert"),
-  
-  
-  # Refined liquids
-  `Refined liquids` = c( "conventional oil",
-      "unconventional oil",
-      "coal",
-      "coal w/CCS",
-      "biomass",
-      "biomass w/CCS",
-      "gas",
-      "energy reduction"),
-  
-  # Color scheme for biomass consumption by use
-  `Biomass consumption` = c( "direct buildings",
-  "industry",
-  "electricity",
-  "refining",
-  "hydrogen",
-  "synthetic gas", 
-  "energy reduction"))
+    )
               
 for(i in 1:length(listx)){
   techs = listx[[i]]              
@@ -247,28 +204,64 @@ for(i in 1:length(listx)){
 
 <!-------------------------->
 <!-------------------------->
-# Cutsomize Palettes
+# Add Missing Colors
 <!-------------------------->
-<!-------------------------->
-
-<!-------------------------->
-## Add your own colors to existing palette
 <!-------------------------->
 
 Users can add a color to any jgcricolor palette which may be missing by adding a color from the available [R colors](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf?utm_source=twitterfeed&utm_medium=twitter) of any [HEX color](https://htmlcolorcodes.com) and assigning it a name. For example if a user wants to add two new colors for `animal energy` with the color `human` and for `animal energy` with the HEX color `#FFF700` they can do so as follows.
 
-```{r, eval=TRUE, warning=FALSE, message=FALSE}
+```{r, eval=T, warning=FALSE, message=FALSE}
 library(jgcricolors)
 library(graphics)
 mypal1 <- jgcricol()$pal_basic  # To load silently
 names(mypal1) <- mypal1
 mypal2 = c(mypal1,"animal energy"="#FFF700", "human energy"="lawngreen")
-pie(rep(1,length(mypal2)),label=names(mypal2),col=mypal2) # Plot as pie chart
+par(mfrow=c(1,2))
+pie(rep(1,length(mypal2)),label=names(mypal1),col=mypal1, main="Pal 1 Missing Colors") # Plot as pie chart
+pie(rep(1,length(mypal2)),label=names(mypal2),col=mypal2, main="Pal 2 Added Colors") # Plot as pie chart
 ```
 
+<!-------------------------->
+# Other Palettes
+<!-------------------------->
+
+```{r, echo=FALSE, eval=TRUE, warning=FALSE, message=FALSE,results = 'asis'}
+library(jgcricolors)
+library(ggplot2)
+
+# See all available color palettes
+my_pals <- names(jgcricol())[!names(jgcricol()) %in% c("pal_all","pal_sankey")]
+ 
+for(i in my_pals){
+  mypal <- jgcricol()[[i]]
+  if(i != "pal_scarcityCat"){names(mypal) <- mypal}
+  mypal1 <- mypal
+  names(mypal1) <- NULL
+  cat("  \n##",  i, "  \n")
+  cat('<div class="column-left">')
+  par(mai = c(0, 0, 0, 0))
+  pie(rep(1,length(mypal)),label=names(mypal),col=mypal)
+  cat('</div>')
+  cat('<div class="column-right">')
+  cat('<p></p>')
+  cat('<p></p>')
+
+  print(ggplot() +
+  geom_polygon(data =  jgcricolors::mapUS49df,
+               aes(x = long, y = lat, group = group, fill = subRegion),
+               colour = "gray10", lwd=0.5) +
+  scale_fill_manual(values=rep(mypal1,50)[1:length(unique(jgcricolors::mapUS49df$subRegion))]) +
+  theme_void() +
+  coord_fixed(ratio = 1.25) +
+  theme(legend.position = "none"))
+
+  cat('</div>')
+  cat('<div class="clearer"></div>')
+}
+```
 
 <!-------------------------->
-## Create custom ramped pallete
+# Create custom ramped pallete
 <!-------------------------->
 Users can create their own ramped palettes of any length `n` using the `RcolorBrewer` package and choosing an R palette from the [R color palette cheatsheet](https://www.nceas.ucsb.edu/sites/default/files/2020-04/colorPaletteCheatsheet.pdf). 
 

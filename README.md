@@ -1,3 +1,5 @@
+[![docs](https://github.com/JGCRI/jgcricolors/actions/workflows/pkgdown.yaml/badge.svg)](https://github.com/JGCRI/jgcricolors/actions/workflows/pkgdown.yaml)
+
 <!-- ------------------------>
 <!-- ------------------------>
 # <a name="KeyLinks"></a>Key Links
