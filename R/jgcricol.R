@@ -190,9 +190,9 @@ jgcricol <- function(palx=NULL, alpha=NULL) {
     `csp w/ storage` = "#f5c88c",
     `pv w/ backup` = "#ffd125",
     `pv w/ storage` = "#ffe791",
-    `rooftop solar` = "#ff7a17",
-    `rooftop pv` = "#ff7a17",
-    `rooftop_pv` = "#ff7a17",
+    `rooftop solar` = "lemonchiffon2",
+    `rooftop pv` = "lemonchiffon2",
+    `rooftop_pv` = "lemonchiffon2",
     `cogen` = "#507fab",
     `battery` = "#92a75d",
     `energy reduction` = "grey",
@@ -203,8 +203,8 @@ jgcricol <- function(palx=NULL, alpha=NULL) {
     # Other
     #--------------
     `heat`="darkslategray",
-    `6 hydrogen` = "gold1",
-    `hydrogen` = "gold1",
+    `6 hydrogen` = "peachpuff2",
+    `hydrogen` = "peachpuff2",
     `Hydrogen Production and Refining` = "black",
     `Refining` = "black",
     `Refining and Hydrogen Production` = "black",

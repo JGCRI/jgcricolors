@@ -85,7 +85,7 @@ data <- data.frame(label=rep(techs,each=4), x=rep(c(1:4),length(techs)), value=r
 
 # Plot
   print(ggplot(data, aes(x=x,y=value, fill=label)) +
-      geom_bar(position="stack", stat="identity",col="black") +
+      geom_bar(position="stack", stat="identity", col="black",lwd=0.5) +
       scale_fill_manual(values=mypal) +
       theme_bw() +
       xlab(NULL) + 
@@ -193,7 +193,7 @@ for(i in 1:length(listx)){
   data <- data.frame(label=rep(techs,each=4), x=rep(c(1:4),length(techs)), value=runif(4*length(techs)))
   cat("  \n##", names(listx[i]), "  \n")
   print(ggplot(data, aes(x=x,y=value, fill=label)) +
-    geom_bar(position="stack", stat="identity",col="black") +
+    geom_bar(position="stack", stat="identity",col="black",lwd=0.5) +
     scale_fill_manual(values=mypal) +
     theme_bw() +
     xlab(NULL) + ylab(NULL))
@@ -217,8 +217,9 @@ mypal1 <- jgcricol()$pal_basic  # To load silently
 names(mypal1) <- mypal1
 mypal2 = c(mypal1,"animal energy"="#FFF700", "human energy"="lawngreen")
 par(mfrow=c(1,2))
-pie(rep(1,length(mypal2)),label=names(mypal1),col=mypal1, main="Pal 1 Missing Colors") # Plot as pie chart
-pie(rep(1,length(mypal2)),label=names(mypal2),col=mypal2, main="Pal 2 Added Colors") # Plot as pie chart
+par(mai = c(0.5, 0.5, 0.5, 0.5))
+pie(rep(1,length(mypal2)),label=names(mypal1),col=mypal1, main="Pal 1 w/ Missing Colors") # Plot as pie chart
+pie(rep(1,length(mypal2)),label=names(mypal2),col=mypal2, main="Pal 2 w/ Added Colors") # Plot as pie chart
 ```
 
 <!-------------------------->
