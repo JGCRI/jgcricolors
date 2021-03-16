@@ -1,0 +1,20 @@
+Package: jgcricolors
+Title: jgcricolors
+Version: 0.1.0
+Authors@R: c(person("Zarrar", "Khan", email = "zarrar.khan@pnnl.gov", role = c("aut", "cre"),
+		   comment = c(ORCID ="0000-0002-8147-8553")))
+Description: An R package to manage JGCRI colors.
+URL: https://github.com/JGCRI/jgcricolors
+BugReports: https://github.com/JGCRI/jgcricolors/issues
+Depends: R (>= 2.10)
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
+Imports: 
+	knitr,
+	graphics
+Suggests: 
+    rmarkdown
+VignetteBuilder: 
+    knitr
