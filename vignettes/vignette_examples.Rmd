@@ -1,0 +1,162 @@
+---
+title: "vignette_examples"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{vignette_examples}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r, echo=F, eval=T, warning=F, message=F}
+library(jgcricolors)
+library(rmap)
+library(ggplot2)
+```
+
+
+<style type="text/css">
+.column-left{
+  float: left;
+  width: 50%;
+}
+.column-right{
+  float: right;
+  width: 50%;
+}
+.clearer {clear: both}
+</style>
+
+<!-------------------------->
+<!-------------------------->
+# Key Links
+<!-------------------------->
+<!-------------------------->
+
+- Github: https://github.com/JGCRI/jgcricolors
+- Webpage: https://jgcri.github.io/jgcricolors
+- R Colors: http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf?utm_source=twitterfeed&utm_medium=twitter
+- R Color Palette Cheatsheet: https://www.nceas.ucsb.edu/sites/default/files/2020-04/colorPaletteCheatsheet.pdf 
+- HEX Colors: https://htmlcolorcodes.com/
+
+<!-------------------------->
+<!-------------------------->
+# Available Palettes
+<!-------------------------->
+<!-------------------------->
+
+```{r, eval=T, warning=F, message=F}
+library(jgcricolors)
+
+# See all available color palettes
+names(jgcricol())
+
+# Load a color palette
+mypal1 <- jgcricol()$pal_basic  # To load values only
+mypal2 <- jgcricol("pal_basic") # To see an example piechart and values
+
+```
+
+
+<!-------------------------->
+# Visualize Palettes
+<!-------------------------->
+
+```{r, echo=F, eval=T, warning=F, message=F,results = 'asis'}
+library(jgcricolors)
+
+# See all available color palettes
+pals <- names(jgcricol())[names(jgcricol()) != "pal_all"]
+n = length(pals)
+#par(mfrow=c(1,2))
+for(i in pals){
+  mypal <- jgcricol()[[i]]
+  cat("  \n##",  i, "  \n")
+  cat('<div class="column-left">')
+  par(mai = c(0, 0, 0, 0))
+  pie(rep(1,length(mypal)),label=names(mypal),col=mypal)
+  cat('</div>')
+  cat('<div class="column-right">')
+  cat('<p></p>')
+  cat('<p></p>')
+  invisible(rmap::map(rmap::mapUS49, classPalette=i, printFig=F))
+  cat('</div>')
+  cat('<div class="clearer"></div>')
+}
+```
+
+<!-------------------------->
+<!-------------------------->
+# JGCRI Themes (pal_all)
+<!-------------------------->
+<!-------------------------->
+
+`jgcricol("pal_all")` is a comprehensive color palette which applies to most JGCRI and GCAM outputs. These can be used for line and bar charts.
+
+```{r, eval=T, warning=F, message=F, results = 'asis'}
+library(jgcricolors)
+library(ggplot2)
+
+# Set your palette
+mypal = jgcricol()$pal_all
+
+# Example lists of different GCAM data
+listx <- list(
+  energy = c("coal","gas","oil","nuclear","hydro","solar","wind","biomass"),
+  agriculture = c("Wheat","Rice","Corn"))
+              
+for(i in 1:length(listx)){
+  techs = listx[[i]]              
+  data <- data.frame(label=rep(techs,each=10), x=rep(c(1:10),length(techs)), value=runif(10*length(techs)))
+  cat("  \n##", names(listx[i]), "  \n")
+  print(ggplot(data, aes(x=x,y=value, fill=label)) +
+    geom_bar(position="stack", stat="identity",col="black") +
+    scale_fill_manual(values=mypal) +
+    theme_bw() +
+    xlab(NULL) + ylab(NULL))
+  cat('<div class="clearer"></div>')
+}
+
+```
+
+<!-------------------------->
+<!-------------------------->
+# Cutsomize Palettes
+<!-------------------------->
+<!-------------------------->
+
+<!-------------------------->
+## Add your own colors to existing palette
+<!-------------------------->
+
+Users can add a color to any jgcricolor palette which may be missing by adding a color from the available [R colors](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf?utm_source=twitterfeed&utm_medium=twitter) of any [HEX color](https://htmlcolorcodes.com) and assigning it a name. For example if a user wants to add two new colors for `animal energy` with the color `human` and for `animal energy` with the HEX color `#FFF700` they can do so as follows.
+
+```{r, eval=T, warning=F, message=F}
+library(jgcricolors)
+library(graphics)
+mypal1 <- jgcricol()$pal_basic  # To load silently
+names(mypal1) <- mypal1
+mypal2 = c(mypal1,"animal energy"="#FFF700", "human energy"="lawngreen")
+pie(rep(1,length(mypal2)),label=names(mypal2),col=mypal2) # Plot as pie chart
+```
+
+
+<!-------------------------->
+## Create custom ramped pallete
+<!-------------------------->
+Users can create their own ramped palettes of any length `n` using the `RcolorBrewer` package and choosing an R palette from the [R color palette cheatsheet](https://www.nceas.ucsb.edu/sites/default/files/2020-04/colorPaletteCheatsheet.pdf). 
+
+```{r, eval=T, warning=F, message=F}
+library(RColorBrewer)
+library(graphics)
+getcol = colorRampPalette(brewer.pal(9, 'Pastel1')); 
+values=getcol(9);
+pie(rep(1,length(values)),label=names(values),col=values)
+```
+
