@@ -65,7 +65,7 @@ mypal2 <- jgcricol("pal_basic") # To see an example piechart and values
 <!-------------------------->
 <!-------------------------->
 
-`jgcricol("pal_all")` is a comprehensive color palette which applies to most JGCRI and GCAM outputs. These can be used for line and bar charts. The following code shows how you can use the same `pal_all` for various bar charts in ggplot. 
+`jgcricol("pal_all")` is a comprehensive color palette which applies to most JGCRI and GCAM outputs. These can be used for line and bar charts. The following code shows how you can use the same `pal_all` for various bar charts in ggplot2. 
 
 ```{r, eval=F, echo=T, warning=FALSE, message=FALSE}
 library(jgcricolors)
