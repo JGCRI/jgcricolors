@@ -208,7 +208,7 @@ for(i in 1:length(listx)){
 <!-------------------------->
 <!-------------------------->
 
-Users can add a color to any jgcricolor palette which may be missing by adding a color from the available [R colors](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf?utm_source=twitterfeed&utm_medium=twitter) of any [HEX color](https://htmlcolorcodes.com) and assigning it a name. For example if a user wants to add two new colors for `animal energy` with the color `human` and for `animal energy` with the HEX color `#FFF700` they can do so as follows.
+Users can add a color to any jgcricolor palette which may be missing by adding a color from the available [R colors](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf?utm_source=twitterfeed&utm_medium=twitter) or any [HEX color](https://htmlcolorcodes.com) and assigning it a name. For example if a user wants to add two new colors for `animal energy` with the HEX color `"#FFF700"` and for `human energy` with the color `lawngreen` they can do so as follows.
 
 ```{r, eval=T, warning=FALSE, message=FALSE}
 library(jgcricolors)
