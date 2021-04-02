@@ -86,7 +86,7 @@ jgcricol <- function(palx=NULL, alpha=NULL) {
 
   pal_energy <- c()
 
-  pal_all <- c(
+  pal_all <-  c(
     #---------------
     # Energy
     #--------------
@@ -95,7 +95,7 @@ jgcricol <- function(palx=NULL, alpha=NULL) {
     `3 coal` = "gray20",
     coal = "gray20",
     `coal (conv pul)` = "gray20",
-     Coal = "gray20",
+    Coal = "gray20",
     `b Coal w/CCS` = "gray40",
     `c coal CCS` = "gray40",
     `Coal CCS` = "gray40",
@@ -151,6 +151,7 @@ jgcricol <- function(palx=NULL, alpha=NULL) {
     `Biomass CCS` = "#88c892",
     `d biomass CCS` = "#88c892",
     `h Bioenergy w/CCS` = '#88c892',
+    `Bioenergy CCS`='#88c892',
     `j traditional bioenergy` = "chartreuse3",
     `traditional bioenergy` = "chartreuse3",
     `biomass (IGCC CCS)` = "olivedrab2",
@@ -161,7 +162,7 @@ jgcricol <- function(palx=NULL, alpha=NULL) {
     `biomass liquids`="darkolivegreen1",
     `coal to liquids`='gray40',
     `gas to liquids`='darkslategray1',
-    `oil refining`='firebrick4',
+    `oil refining`='#d01c2a',
     `j traditional biomass` = "#11d081",
     `traditional biomass` = "#11d081",
     `h Biomass w/CCS` = "#88c892",
@@ -199,6 +200,9 @@ jgcricol <- function(palx=NULL, alpha=NULL) {
     `n CHP` = "#507fab",
     `grid storage` = "gray66",
     `grid_storage` = "gray66",
+    `hydro_import_lao` = "yellowgreen",
+    `hydro_import_mmr` = "mediumspringgreen",
+    renewables = "bisque1",
     #---------------
     # Other
     #--------------
@@ -206,8 +210,9 @@ jgcricol <- function(palx=NULL, alpha=NULL) {
     `6 hydrogen` = "peachpuff2",
     `hydrogen` = "peachpuff2",
     `Hydrogen Production and Refining` = "black",
-    `Refining` = "black",
+    `Refining` = "#d01c2a",
     `Refining and Hydrogen Production` = "black",
+    `refined liquids enduse` = "#f7988f",
     `CO2 Refining and Hydrogen Production` = "black",
     `o Battery` = "#92a75d",
     `energy reduction` = "grey",
@@ -259,9 +264,6 @@ jgcricol <- function(palx=NULL, alpha=NULL) {
     crops='forestgreen',
     `Electricity` = "lavender",
     `5 electricity` = "lavender",
-    municipal = "dodgerblue",
-    mining = "grey75",
-    livestock='goldenrod2',
     `CO2 Livestock` = 'goldenrod2',
     #---------------
     # Transportation
@@ -288,10 +290,12 @@ jgcricol <- function(palx=NULL, alpha=NULL) {
     `LUC Emission`="grey30",
     `LUC Absorption`="darkolivegreen4",
     delivered_gas="darkslategray1",
+    `delivered gas`="darkslategray1",
     refined_liquids_enduse="#d01c2a",
     H2_enduse = "#507fab",
     delivered_coal = "black",
-    wholesale_gas="darkslategray1",
+    wholesale_gas="deepskyblue1",
+    `wholesale gas`="deepskyblue1",
     delivered_biomass="darkolivegreen2",
     refined_liquids_industrial="#d01c2a",
     sewage_landfills = 'brown',
@@ -306,6 +310,8 @@ jgcricol <- function(palx=NULL, alpha=NULL) {
     pasture="goldenrod1",
     otherarable="darkorange4",
     grass="darkolivegreen1",
+    naturalOtherGrass="darkolivegreen1",
+    naturalOtherTree="chartreuse2",
     forest="darkgreen",
     naturalOther="grey75",
     `CO2 Transport Intl Av`="cadetblue3",
@@ -342,7 +348,18 @@ jgcricol <- function(palx=NULL, alpha=NULL) {
     IRR = "dodgerblue3",
     irrigation = "dodgerblue3",
     RFD = "gold1",
-    RAINFED = "gold1"
+    RAINFED = "gold1",
+    #----------------
+    # Water
+    #----------------
+    municipal = "dodgerblue",
+    mining = "grey75",
+    livestock='goldenrod2',
+    primary = "grey75",
+    irrigation = "forestgreen",
+    domestic = "dodgerblue",
+    animal = "goldenrod2",
+    desalination = "darkblue"
   )
 
   # Expand to include lower, upper and camelcase versions
