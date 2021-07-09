@@ -81,12 +81,13 @@ techs = c("a oil","a oil CCS","b natural gas","b natural gas CCS","c coal","c co
     "j traditional biomass","energy reduction")
 
 # Create data
-data <- data.frame(label=rep(techs,each=4), x=rep(c(1:4),length(techs)), value=runif(4*length(techs)))
+data <- data.frame(label=rep(techs,each=4), x=rep(c(1:4),length(techs)), value=runif(4*length(techs))) %>%
+  mutate(label=as.factor(label))
 
 # Plot
   print(ggplot(data, aes(x=x,y=value, fill=label)) +
       geom_bar(position="stack", stat="identity", col="black",lwd=0.5) +
-      scale_fill_manual(values=mypal) +
+      scale_fill_manual(values=mypal[names(mypal) %in% techs]) +
       theme_bw() +
       xlab(NULL) + 
       ylab(NULL) + 
@@ -194,7 +195,7 @@ for(i in 1:length(listx)){
   cat("  \n##", names(listx[i]), "  \n")
   print(ggplot(data, aes(x=x,y=value, fill=label)) +
     geom_bar(position="stack", stat="identity",col="black",lwd=0.5) +
-    scale_fill_manual(values=mypal) +
+    scale_fill_manual(values=mypal[names(mypal) %in% techs]) +
     theme_bw() +
     xlab(NULL) + ylab(NULL))
   cat('<div class="clearer"></div>')
