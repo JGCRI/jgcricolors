@@ -1,4 +1,8 @@
 [![docs](https://github.com/JGCRI/jgcricolors/actions/workflows/pkgdown.yaml/badge.svg)](https://github.com/JGCRI/jgcricolors/actions/workflows/pkgdown.yaml)
+[![build](https://github.com/JGCRI/jgcricolors/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/JGCRI/jgcricolors/actions/workflows/build.yml)
+[![test_coverage](https://github.com/JGCRI/jgcricolors/actions/workflows/test_coverage.yml/badge.svg?branch=main)](https://github.com/JGCRI/jgcricolors/actions/workflows/test_coverage.yml)
+[![codecov](https://codecov.io/gh/JGCRI/jgcricolors/branch/main/graph/badge.svg?token=2T6IZHQV9J)](https://codecov.io/gh/JGCRI/jgcricolors)
+
 
 <!-- ------------------------>
 <!-- ------------------------>
