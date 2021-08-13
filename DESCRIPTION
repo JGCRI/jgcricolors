@@ -16,7 +16,8 @@ Imports:
 	graphics,
 	ggplot2,
 	RColorBrewer,
-	stringr
+	stringr,
+	markdown
 Suggests: 
     rmarkdown
 VignetteBuilder: 
