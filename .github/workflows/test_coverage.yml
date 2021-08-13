@@ -16,6 +16,8 @@ jobs:
       - uses: r-lib/actions/setup-r@master
         with:
           r-version: ${{ matrix.r }}
+      - uses: r-lib/actions/setup-pandoc@master
+      - uses: r-lib/actions/setup-tinytex@master
       - name: Install dependencies
         env:
           R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
