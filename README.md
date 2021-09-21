@@ -32,8 +32,8 @@
 2. Open R studio:
 
 ```r
-install.packages(“devtools”)
-devtools::install_github(“JGCRI/jgcricolors”)
+install.packages("devtools")
+devtools::install_github("JGCRI/jgcricolors")
 ```
 
 <!-- ------------------------>
