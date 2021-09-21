@@ -10,7 +10,7 @@
 <!-- ------------------------>
 <!-- ------------------------>
 
-`jgcricolors` is package which hosts various generic and Hoint Global Change Research Institute (JGCRI) specific color palettes charts and maps.
+`jgcricolors` is package which hosts various generic and Joint Global Change Research Institute (JGCRI) specific color palettes charts and maps.
 
 <br>
 
