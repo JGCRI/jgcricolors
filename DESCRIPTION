@@ -6,11 +6,11 @@ Authors@R: c(person("Zarrar", "Khan", email = "zarrar.khan@pnnl.gov", role = c("
 		   person("Chris", "Vernon", role = c("aut"), comment = c(ORCID="0000-0002-3406-6214")),
 		   person("Mengqi", "Zhao", role = c("aut"), comment = c(ORCID="0000-0001-5385-2758")),
 		   person("Thomas", "Wild", role = c("aut"), comment = c(ORCID="0000-0002-6045-7729")))
-Description: An R package with several color palettes used by the Pacific Northwest National Laboratory - Joint Global Change Research Institute (JGCRI) for maps and charts.
+Description: An R package with color palettes used by the Pacific Northwest National Laboratory - Joint Global Change Research Institute (JGCRI) for maps and charts.
 URL: https://github.com/JGCRI/jgcricolors
 BugReports: https://github.com/JGCRI/jgcricolors/issues
 Depends: R (>= 2.10)
-License: MIT + file LICENSE
+License: BSD 2-Clause "Simplified" License
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1

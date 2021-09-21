@@ -26,3 +26,4 @@ rmapCheatsheet.pdf
 ^\.github$
 ^_config.yml$
 ^articles$
+cran-comments.md
