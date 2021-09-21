@@ -24,7 +24,6 @@ jobs:
           GITHUB_PAT: ${{ secrets.GH_PAT }}
         run: Rscript -e "install.packages(c('remotes', 'rcmdcheck', 'covr'))" -e "remotes::install_deps(dependencies = TRUE)"
       - name: Test coverage
-        if: matrix.config.os == 'macOS-latest' && matrix.config.r == 'release'
         run: |
           remotes::install_cran("covr")
           covr::codecov(token = "${{secrets.CODECOV_TOKEN}}")
