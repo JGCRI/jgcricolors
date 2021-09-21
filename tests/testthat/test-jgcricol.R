@@ -1,4 +1,4 @@
-context("jgcricol")
+context("jgcricolors")
 library(jgcricolors); library(testthat); library(dplyr)
 
 test_that("All jgcricol palettes exist", {

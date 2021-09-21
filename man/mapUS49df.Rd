@@ -9,7 +9,7 @@ Excludes Alaska, Hawaii and Puerto Rico. Includes DC.}
 A SpatialPolygonsDataFrame
 }
 \source{
-Made with Natural Earth. \url{http://www5.statcan.gc.ca/cansim/}
+Made with Natural Earth. \url{https://www.naturalearthdata.com/}
 }
 \usage{
 mapUS49df
