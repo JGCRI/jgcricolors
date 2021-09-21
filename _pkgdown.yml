@@ -12,7 +12,7 @@ navbar:
       text: "Reference"
       href: reference/index.html
     - text: "Contribute"
-      href: contributing.html
+      href: CONTRIBUTING.html
     - icon: fa-newspaper-o
       text: "News"
       href: news/index.html
