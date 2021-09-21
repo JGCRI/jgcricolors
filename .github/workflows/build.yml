@@ -29,7 +29,7 @@ jobs:
       - uses: r-lib/actions/setup-pandoc@master
       - uses: r-lib/actions/setup-tinytex@master
        
-       - name: Install dependencies
+      - name: Install dependencies
         run: |
           install.packages(c("rcmdcheck"), repos = "https://cloud.r-project.org")
         shell: Rscript {0}
