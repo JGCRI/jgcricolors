@@ -40,16 +40,6 @@
 
 jgcricol <- function(palx=NULL, alpha=NULL) {
 
-  #------------------------------------------
-  # New jgcricol
-  #-------------------------------------------
-  # Creating jgcricol
-  # library(RColorBrewer)
-  # getcol = colorRampPalette(brewer.pal(9, 'Pastel1')); values=getcol(9); values
-  # pie(rep(1,length(values)),label=names(values),col=values)
-  # library(jgcricolpace) pal<-choose_palette() pal(9)
-  # colx1<-pal_div_BlRd;pie(rep(1,length(colx1)),label=names(colx1),col=colx1)
-
   # Add Alpha
   add.alpha <- function(col, alpha=1){
     if(missing(col))
@@ -407,7 +397,6 @@ jgcricol <- function(palx=NULL, alpha=NULL) {
         mypal <- add.alpha(mypal,alpha)
       }
       graphics::pie(rep(1,length(mypal)),label=names(mypal),col=mypal)
-      print(mypal)
     }}
 
   jgcricol <-list(pal_all=pal_all,pal_16 = pal_16,pal_seq=pal_seq,pal_basic = pal_basic,
