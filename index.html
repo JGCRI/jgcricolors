@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="An R package to manage JGCRI colors">
-<meta property="og:description" content="An R package with several color palettes used by the Pacific Northwest National Laboratory - Joint Global Change Research Institute (JGCRI) for maps and charts.">
+<meta property="og:description" content="An R package with color palettes used by the Pacific Northwest National Laboratory - Joint Global Change Research Institute (JGCRI) for maps and charts.">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -88,31 +88,16 @@
 
 <!-- ------------------------>
 <!-- ------------------------>
-<div id="key-links" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#key-links" class="anchor"></a><a name="KeyLinks"></a>Key Links</h1></div>
-<!-- ------------------------>
-<!-- ------------------------>
-<ul>
-<li>Github: <a href="https://github.com/JGCRI/jgcricolors" class="uri">https://github.com/JGCRI/jgcricolors</a>
-</li>
-<li>Webpage: <a href="https://jgcri.github.io/jgcricolors" class="uri">https://jgcri.github.io/jgcricolors</a>
-</li>
-<li>R Colors: <a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf?utm_source=twitterfeed&amp;utm_medium=twitter" class="uri">http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf?utm_source=twitterfeed&amp;utm_medium=twitter</a>
-</li>
-<li>R Color Palette Cheatsheet: <a href="https://www.nceas.ucsb.edu/sites/default/files/2020-04/colorPaletteCheatsheet.pdf" class="uri">https://www.nceas.ucsb.edu/sites/default/files/2020-04/colorPaletteCheatsheet.pdf</a>
-</li>
-<li>HEX Colors: <a href="https://htmlcolorcodes.com/" class="uri">https://htmlcolorcodes.com/</a>
-</li>
-</ul>
-<!-- ------------------------><!-- ------------------------>
-</div>
 <div id="introduction" class="section level1">
-<h1 class="hasAnchor">
-<a href="#introduction" class="anchor"></a><a name="Introduction"></a>Introduction</h1>
+<div class="page-header"><h1 class="hasAnchor">
+<a href="#introduction" class="anchor"></a><a name="Introduction"></a>Introduction</h1></div>
 <!-- ------------------------>
 <!-- ------------------------>
-<p><code>jgcricolors</code> is package which hosts various generic and JGCRI specific color palettes charts and maps.</p>
+<p><code>jgcricolors</code> is package which hosts various generic and Hoint Global Change Research Institute (JGCRI) specific color palettes charts and maps.</p>
+<p><br></p>
+<p align="center">
+<a href="https://jgcri.github.io/jgcricolors/articles/vignette_examples.html" target="_blank"><img src="https://github.com/JGCRI/jgcricolors/blob/main/vignettes/button_user_guide.PNG?raw=true" alt="https://jgcri.github.io/jgcricolors/articles/vignette_examples.html" height="60"></a>
+</p>
 <!-- ------------------------>
 <!-- ------------------------>
 </div>
@@ -151,15 +136,6 @@
 <span class="va">mypal2</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/jgcricol.html">jgcricol</a></span><span class="op">(</span><span class="st">"pal_basic"</span><span class="op">)</span> <span class="co"># To see an example piechart and values</span>
 
 </code></pre></div>
-<!-- ------------------------>
-<!-- ------------------------>
-</div>
-<div id="detailed-guide" class="section level1">
-<h1 class="hasAnchor">
-<a href="#detailed-guide" class="anchor"></a>Detailed guide</h1>
-<!-- ------------------------>
-<!-- ------------------------>
-<p>A detailed step-by-step walkthrough and how-to guide is provided on the <a href="https://jgcri.github.io/jgcricolors/articles/vignette_examples.html">Examples</a> page.</p>
 </div>
 
   </div>
@@ -178,8 +154,7 @@
 <h2>License</h2>
 <ul class="list-unstyled">
 <li>
-<a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a>
-</li>
+<a href="https://opensource.org/licenses/BSD-3-Clause">BSD</a> 2-Clause "Simplified" License</li>
 </ul>
 </div>
 <div class="developers">
