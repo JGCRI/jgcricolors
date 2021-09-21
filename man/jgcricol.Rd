@@ -49,5 +49,3 @@ pal2 <- jgcricol("pal_basic")
 pals <- jgcricol()
 pal3 <- pals$pal_basic # This way will auto populate the options after pals$
 }
-\keyword{jgcricol,}
-\keyword{palette}

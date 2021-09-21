@@ -24,7 +24,6 @@
 #' \item "pal_scarcityCat"}
 #' @param palx Palette name to view the palette jgcricol. e.g. jgcricol(palx="pal_basic")
 #' @param alpha Default = NULL. Parameter to add transparency.
-#' @keywords jgcricol, palette
 #' @return A list of color palettes.
 #' @export
 #' @examples
