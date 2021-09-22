@@ -28,17 +28,6 @@ options(rmarkdown.html_vignette.check_title = FALSE)
 .clearer {clear: both}
 </style>
 
-<!-------------------------->
-<!-------------------------->
-# Key Links
-<!-------------------------->
-<!-------------------------->
-
-- Github: https://github.com/JGCRI/jgcricolors
-- Webpage: https://jgcri.github.io/jgcricolors
-- R Colors: http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf?utm_source=twitterfeed&utm_medium=twitter
-- R Color Palette Cheatsheet: https://www.nceas.ucsb.edu/sites/default/files/2020-04/colorPaletteCheatsheet.pdf 
-- HEX Colors: https://htmlcolorcodes.com/
 
 <!-------------------------->
 <!-------------------------->

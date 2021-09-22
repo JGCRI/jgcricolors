@@ -27,3 +27,5 @@ rmapCheatsheet.pdf
 ^_config.yml$
 ^articles$
 cran-comments.md
+^CRAN-RELEASE$
+CONTRIBUTING.md
