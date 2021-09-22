@@ -206,10 +206,12 @@ library(graphics)
 mypal1 <- jgcricol()$pal_basic  # To load silently
 names(mypal1) <- mypal1
 mypal2 = c(mypal1,"animal energy"="#FFF700", "human energy"="lawngreen")
+oldpar <- par()
 par(mfrow=c(1,2))
 par(mai = c(0.5, 0.5, 0.5, 0.5))
 pie(rep(1,length(mypal2)),label=names(mypal1),col=mypal1, main="Pal 1 w/ Missing Colors") # Plot as pie chart
 pie(rep(1,length(mypal2)),label=names(mypal2),col=mypal2, main="Pal 2 w/ Added Colors") # Plot as pie chart
+par(oldpar)
 ```
 
 <!-------------------------->
@@ -230,6 +232,7 @@ for(i in my_pals){
   names(mypal1) <- NULL
   cat("  \n##",  i, "  \n")
   cat('<div class="column-left">')
+  oldpar <- par()
   par(mai = c(0, 0, 0, 0))
   pie(rep(1,length(mypal)),label=names(mypal),col=mypal)
   cat('</div>')
@@ -248,6 +251,7 @@ for(i in my_pals){
 
   cat('</div>')
   cat('<div class="clearer"></div>')
+  par(oldpar)
 }
 ```
 
