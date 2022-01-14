@@ -5,14 +5,13 @@
 [![CRAN status](https://www.r-pkg.org/badges/version/jgcricolors)](https://CRAN.R-project.org/package=jgcricolors)
 [![metacran downloads](https://cranlogs.r-pkg.org/badges/grand-total/jgcricolors)](https://cran.r-project.org/package=jgcricolors)
 
-
 <!-- ------------------------>
 <!-- ------------------------>
 # <a name="Introduction"></a>Introduction
 <!-- ------------------------>
 <!-- ------------------------>
 
-`jgcricolors` is package which hosts various generic and Joint Global Change Research Institute (JGCRI) specific color palettes charts and maps.
+`jgcricolors` is a package which hosts various generic and Joint Global Change Research Institute (JGCRI) specific color palettes charts and maps.
 
 <br>
 
