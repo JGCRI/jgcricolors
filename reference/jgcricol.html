@@ -77,19 +77,24 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">jgcricol</span><span class="op">(</span>palx <span class="op">=</span> <span class="cn">NULL</span>, alpha <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">jgcricol</span><span class="op">(</span>palx <span class="op">=</span> <span class="cn">NULL</span>, alpha <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>palx</dt>
 <dd><p>Palette name to view the palette jgcricol. e.g. jgcricol(palx="pal_basic")</p></dd>
+
+
 <dt>alpha</dt>
 <dd><p>Default = NULL. Parameter to add transparency.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A list of color palettes.</p>
+    
+
+<p>A list of color palettes.</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -115,20 +120,20 @@
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/JGCRI/jgcricolors" class="external-link">jgcricolors</a></span><span class="op">)</span></span>
-<span class="r-in"><span class="co"># To see all available palettes</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="fu">jgcricol</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/JGCRI/jgcricolors" class="external-link">jgcricolors</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co"># To see all available palettes</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="fu">jgcricol</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "pal_all"         "pal_16"          "pal_seq"         "pal_basic"      </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [5] "pal_hot"         "pal_green"       "pal_wet"         "pal_div_wet"    </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [9] "pal_div_RdBl"    "pal_div_BlRd"    "pal_div_GnBr"    "pal_div_BrGn"   </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [13] "pal_div_BluRd"   "pal_div_RdBlu"   "pal_sankey"      "pal_spectral"   </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [17] "pal_scarcityCat"</span>
-<span class="r-in"><span class="co"># How to use palettes:</span></span>
-<span class="r-in"><span class="va">pal1</span> <span class="op">&lt;-</span> <span class="fu">jgcricol</span><span class="op">(</span><span class="op">)</span><span class="op">$</span><span class="va">pal_basic</span></span>
-<span class="r-in"><span class="va">pal2</span> <span class="op">&lt;-</span> <span class="fu">jgcricol</span><span class="op">(</span><span class="st">"pal_basic"</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="co"># How to use palettes:</span></span></span>
+<span class="r-in"><span><span class="va">pal1</span> <span class="op">&lt;-</span> <span class="fu">jgcricol</span><span class="op">(</span><span class="op">)</span><span class="op">$</span><span class="va">pal_basic</span></span></span>
+<span class="r-in"><span><span class="va">pal2</span> <span class="op">&lt;-</span> <span class="fu">jgcricol</span><span class="op">(</span><span class="st">"pal_basic"</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="jgcricol-1.png" alt="" width="700" height="433"></span>
-<span class="r-in"><span class="va">pals</span> <span class="op">&lt;-</span> <span class="fu">jgcricol</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">pal3</span> <span class="op">&lt;-</span> <span class="va">pals</span><span class="op">$</span><span class="va">pal_basic</span> <span class="co"># This way will auto populate the options after pals$</span></span>
+<span class="r-in"><span><span class="va">pals</span> <span class="op">&lt;-</span> <span class="fu">jgcricol</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">pal3</span> <span class="op">&lt;-</span> <span class="va">pals</span><span class="op">$</span><span class="va">pal_basic</span> <span class="co"># This way will auto populate the options after pals$</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -143,7 +148,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>
