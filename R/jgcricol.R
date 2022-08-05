@@ -129,14 +129,14 @@ jgcricol <- function(palx=NULL, alpha=NULL) {
     `International Ship liquids` = "lightcoral",
     `International Ship Oil` = "lightcoral",
     `liquids shp`="lightcoral",
-    `g Biomass` = "#00931d",
-    `g Bioenergy` = "#00931d",
-    `d biomass` = "#00931d",
-    `4 biomass` = "#00931d",
-    Biomass = "#00931d",
-    bioenergy = "#00931d",
-    `d bioenergy` = "#00931d",
-    Bioenergy = "#00931d",
+    `g Biomass` = "#006314",
+    `g Bioenergy` = "#006314",
+    `d biomass` = "#006314",
+    `4 biomass` = "#006314",
+    Biomass = "#006314",
+    bioenergy = "#006314",
+    `d bioenergy` = "#006314",
+    Bioenergy = "#006314",
     `Biomass CCS` = "#88c892",
     `d biomass CCS` = "#88c892",
     `h Bioenergy w/CCS` = '#88c892',
@@ -247,10 +247,10 @@ jgcricol <- function(palx=NULL, alpha=NULL) {
     `CO2 Transport` = "#d0f6f7",
     elect_td_trn = "#d0f6f7",
     `trn_pass_road_bus` = "purple",
-    Agriculture = "forestgreen",
-    Ag = "forestgreen",
-    ag = "forestgreen",
-    crops='forestgreen',
+    Agriculture = "#529300",
+    Ag = "#529300",
+    ag = "#529300",
+    crops='#529300',
     `Electricity` = "lavender",
     `5 electricity` = "lavender",
     `CO2 Livestock` = 'goldenrod2',
@@ -398,12 +398,12 @@ jgcricol <- function(palx=NULL, alpha=NULL) {
       graphics::pie(rep(1,length(mypal)),label=names(mypal),col=mypal)
     }}
 
-  jgcricol <-list(pal_all=pal_all,pal_16 = pal_16,pal_seq=pal_seq,pal_basic = pal_basic,
-                      pal_hot = pal_hot,pal_green=pal_green,pal_wet=pal_wet,
-                      pal_div_wet=pal_div_wet,pal_div_RdBl=pal_div_RdBl,pal_div_BlRd=pal_div_BlRd,
-                      pal_div_GnBr=pal_div_GnBr,pal_div_BrGn=pal_div_BrGn,
-                      pal_div_BluRd=pal_div_BluRd,pal_div_RdBlu=pal_div_RdBlu,
-                      pal_sankey=pal_sankey, pal_spectral=pal_spectral, pal_scarcityCat=pal_scarcityCat)
+  jgcricol <- list(pal_all=pal_all,pal_16 = pal_16,pal_seq=pal_seq,pal_basic = pal_basic,
+                  pal_hot = pal_hot,pal_green=pal_green,pal_wet=pal_wet,
+                  pal_div_wet=pal_div_wet,pal_div_RdBl=pal_div_RdBl,pal_div_BlRd=pal_div_BlRd,
+                  pal_div_GnBr=pal_div_GnBr,pal_div_BrGn=pal_div_BrGn,
+                  pal_div_BluRd=pal_div_BluRd,pal_div_RdBlu=pal_div_RdBlu,
+                  pal_sankey=pal_sankey, pal_spectral=pal_spectral, pal_scarcityCat=pal_scarcityCat)
 
   if(is.null(palx)){return(jgcricol=jgcricol)}else{
     return(mypal)
